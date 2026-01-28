@@ -363,9 +363,36 @@ export default function SingleCardScroll() {
                 Footer
              </h2>
              
-             <p className="font-handwriting text-2xl md:text-3xl text-white/70 transform rotate-1 mt-3">
+             <p className="font-handwriting text-2xl md:text-3xl text-white/70 transform rotate-1 mt-3 mb-8">
                 Thanks for visiting!
              </p>
+
+             {/* Navigation Buttons - Chalk Style */}
+             <div className="flex gap-4 md:gap-6 mb-6 z-10 relative pointer-events-auto">
+                 {/* TOP Button */}
+                 <button
+                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                     className="px-6 py-3 bg-white/10 border-2 border-white/40 rounded-lg font-handwriting text-white/90 text-lg md:text-xl hover:bg-white/20 hover:scale-105 transition-all transform -rotate-1 shadow-lg"
+                 >
+                     TOP
+                 </button>
+
+                 {/* DATA Button */}
+                 <button
+                     onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                     className="px-6 py-3 bg-white/10 border-2 border-white/40 rounded-lg font-handwriting text-white/90 text-lg md:text-xl hover:bg-white/20 hover:scale-105 transition-all transform rotate-1 shadow-lg"
+                 >
+                     DATA
+                 </button>
+
+                 {/* FOOTER Button */}
+                 <button
+                     onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+                     className="px-6 py-3 bg-white/10 border-2 border-white/40 rounded-lg font-handwriting text-white/90 text-lg md:text-xl hover:bg-white/20 hover:scale-105 transition-all transform -rotate-1 shadow-lg"
+                 >
+                     FOOTER
+                 </button>
+             </div>
 
              {/* Chalk Tray / Ledge - Larger */}
              <div className="absolute bottom-0 left-0 w-full h-6 bg-[#4e342e] border-t border-[#3e2723] shadow-lg flex items-center px-8 gap-4">
