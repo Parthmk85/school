@@ -1,5 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { RobotProvider } from "../context/RobotContext";
+import Navbar from "../components/Navbar";
+// import RodNavbar from "../components/RodNavbar";
+import Sidebar from "../components/Sidebar";
+import SmoothScrolling from "../components/SmoothScrolling";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,9 +25,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        suppressHydrationWarning={true}
       >
-        {children}
+        <RobotProvider>
+          <SmoothScrolling />
+
+          <Sidebar />
+          <div className="lg:pl-14 transition-all duration-300">
+            {children}
+          </div>
+        </RobotProvider>
       </body>
     </html>
   );

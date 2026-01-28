@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  /* scroll-behavior: smooth; - Removed to prevent conflict with Lenis/GSAP */
+  overflow-x: hidden; /* Ensure no horizontal scrollbar */
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
